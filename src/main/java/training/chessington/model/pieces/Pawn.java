@@ -18,9 +18,17 @@ public class Pawn extends AbstractPiece {
         ArrayList<Move> moves = new ArrayList<>();
         Move whitePawnUp = new Move(from, from.plus(-1, 0));
         Move blackPawnDown = new Move(from, from.plus(1, 0));
+        Move whitePawnUpTwo = new Move(from, from.plus(-2, 0));
+        Move blackPawnDownTwo = new Move(from, from.plus(2, 0));
 
         moves.add(whitePawnUp);
         moves.add(blackPawnDown);
+        if (from.getRow() == 6) {
+            moves.add(whitePawnUpTwo);
+        }
+        if (from.getRow() == 1) {
+            moves.add(blackPawnDownTwo);
+        }
         return moves;
     }
 }
